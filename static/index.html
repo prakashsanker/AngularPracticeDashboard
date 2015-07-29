@@ -1,15 +1,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<body>
+<script type="text/javascript" src="/dashboard.js"></script>
+<body ng-app="dashboard">
 	<div class="dashboard">
-		<div class="jobs" ng-controller="JobsController as jobsCtrl">
-			<div class="jobs-list" ng-repeat="job in jobs.jobsCtrl">
-				<ul class="list-inline">
-					<li class="job">
-						{{job.requester}}
-						{{job.description}}
-					</li>
-				</ul>
+		<div ng-controller="JobsController as jobsCtrl">
+			<div class="jobs">
+				[{jobsCtrl.jobs[0]}]
 			</div>
 		</div>
 	</div>

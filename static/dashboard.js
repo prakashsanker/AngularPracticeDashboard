@@ -1,6 +1,10 @@
 (function() {
 	var app = angular.module('dashboard', []);
 
+	app.config(function($interpolateProvider) {
+    	$interpolateProvider.startSymbol('[{');
+    	$interpolateProvider.endSymbol('}]');
+	});
 	app.controller("JobsController", function() {
 		this.currentJob = 0;
 		this.jobs = jobs;
