@@ -7,16 +7,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <body ng-app="dashboard">
 	<div class="dashboard container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">Operator App</a>
-		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-		</div>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Operator App</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+			</div>
+		</nav>
 		<div class="row" ng-controller="JobsController as jobsCtrl">
 			<div class="jobs col-sm-3 col-md-2 sidebar">
-				<ul class="job nav nav-sidebar">
+				<ul class="job nav">
 					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs" ng-click="jobsCtrl.setCurrentJob(job.id)">
-						[{job.requester}]
+						<a href="#">[{job.requester}]</a>
+
 					</li>
 <!-- 					<div class="job-description">
 						[{job.description}]
