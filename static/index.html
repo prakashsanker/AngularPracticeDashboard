@@ -38,8 +38,36 @@
 							<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().phoneNumber}]</a>
 							</span>
 					</div>
-					<div class="contact-info">
-						
+					<div class="contact" ng-show="jobsCtrl.getCurrentJob().contacts">
+						<div class= 'company-info'>
+							<div class='company-name'>
+								[{jobsCtrl.getCurrentJob().contacts.company}]
+							</div>
+							<div class='company-phone'>
+								<span class="glyphicon glyphicon-earphone">	
+								<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
+								</span>
+							</div>
+						</div>
+						<div class="representative-info">
+							<div class="representative-name">
+								[{jobsCtrl.getCurrentJob().contacts.representativeName}]
+							</div>
+							<div class='representative-email'>
+								<span class="glyphicon glyphicon-send">
+								<a href="mailto:[{jobsCtrl.getCurrentJob().contacts.repEmail}]">[{jobsCtrl.getCurrentJob().contacts.repEmail}]</a>
+								</span>
+							</div>
+							<div class="representative-phone">
+									<span class="glyphicon glyphicon-earphone">	
+									<a href="tel:[{jobsCtrl.getCurrentJob().contacts.repPhoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
+									</span>
+							</div>
+							<div class="representative-hints">
+								[{jobsCtrl.getCurrentJob().contacts.helpfulInfo}]
+							</div>
+						</div>
+
 					</div>
 					<hr/>
 					<div class="description">

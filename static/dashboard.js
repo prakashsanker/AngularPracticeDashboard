@@ -39,10 +39,7 @@
 			'phoneNumber': '18008080',
 			'jobStatus': 'new',
 			'notes': "We haven't started looking at this case yet",
-			'contacts': [{
-				'Nike': '(415) 544-9918',
-				'Mr. Jacob Mueller': { 'phone': '(415) 5509-432', 'email': 'jmueller@nike.com','helpful':'Contact between 7pm and 10pm on Thursdays - he will pick up more often'
-			}]
+			'contacts': {'company': 'Nike', 'companyPhone': '(415) 544-9918', 'representativeName': 'Mr. Jacob Mueller', 'repPhoneNumber': '(415) 5509-432', 'repEmail': 'jmueller@nike.com', 'helpfulInfo': 'Contact between 7pm and 10pm on Thursdays - he will pick up more often'}
 		},
 		{
 			'id': 2,
@@ -51,17 +48,15 @@
 			'phoneNumber': '650848405',
 			'jobStatus': 'new',
 			'notes': "We haven't started this case yet - not as important as the others",
-			'contacts': [{
-				"Marvel": '(852) 123-4568',
-				"Peter Parker": {'phone': '(514) 445-8199', 'email': 'pparker@marvel.com', 'helpful': "It's better to contact him on this number - (650)804-5509"}
-			}]
+			'contacts': {'company': 'Marvel', 'companyPhone': '(852) 123-4568', 'representativeName': 'Peter Parker', 'repPhoneNumber': '(514) 445-8199', 'repEmail': 'pparker@marvel.com', 'helpfulInfo': "It's better to contact him on this number - (650)804-5509" }
 		},
 		{	'id': 3,
 			'requester': 'Josh Lyman',
 			'description': 'Matthew Santos as president...or Jed Bartlet..but please not anyone Republican',
 			'phoneNumber': '1234456',
 			'jobStatus': 'progress',
-			'notes': ''
+			'notes': '',
+			'contacts' : []
 		}, 
 		{
 			'id': 4,
