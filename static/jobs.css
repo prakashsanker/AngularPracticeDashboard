@@ -1,13 +1,13 @@
 .new {
-	background-color: #FF0000;
+	background-color: #d9534f;
 }
 
 .inprogress {
-	background-color: #FFFF00;
+	background-color: #f0ad4e;
 }
 
 .resolved {
-	background-color: #008000;
+	background-color: #FF0000;
 }
 
 .force-fixed {

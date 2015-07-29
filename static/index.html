@@ -15,13 +15,12 @@
 			</div>
 		</div>
 	</nav>
-	<div class="dashboard container-fluid">
+	<div class="dashboard container-fluid" ng-controller="JobsController as jobsCtrl">
 		<div class="row" ng-controller="JobsController as jobsCtrl">
 			<div class="jobs col-sm-3 col-md-2 sidebar force-fixed">
 				<ul class="job nav">
-					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs" ng-click="jobsCtrl.setCurrentJob(job.id)">
+					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs" ng-class="{new: job.jobStatus === 'new', inprogress: job.jobStatus === 'progress', resolved: job.jobStatus === 'resolved'}" ng-click="jobsCtrl.setCurrentJob(job.id)">
 						<a href="#">[{job.requester}]</a>
-
 					</li>
 <!-- 					<div class="job-description">
 						[{job.description}]
@@ -31,10 +30,19 @@
 					</div> -->
 				</ul>
 			</div>
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				Main Content here
+			<div class="main-content" ng-show="jobsCtrl.currentJob">
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<h3> [{jobsCtrl.getCurrentJob().requester}]</h3>
+					<div class="phone-number">
+							<span class="glyphicon glyphicon-earphone">	[{jobsCtrl.getCurrentJob().phoneNumber}]</span>
+					</div>
+					<div class="description">
+						<h4>Description</h4>
+						[{jobsCtrl.getCurrentJob().description}]	
+					</div>
+				</div>
 			</div>
 		</div>
-		</div>
+	</div>
 	</div>
 </body>
