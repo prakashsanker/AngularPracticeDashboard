@@ -82,9 +82,11 @@
 						<h4>Description</h4>
 						[{jobsCtrl.getCurrentJob().description}]	
 					</div>
+
 					<form name="notesForm">
+						<h4>Notes</h4>
 						<div class="notes-display">
-							[{job.notes}]
+							[{jobsCtrl.getCurrentJob().notes}]
 						</div>
 						<div class="notes-container">
 							<textarea ng-model="job.notes"></textarea>

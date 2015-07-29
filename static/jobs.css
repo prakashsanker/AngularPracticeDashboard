@@ -30,6 +30,11 @@
   padding-bottom: 10px;
 }
 
+.description {
+  min-width: 200px;
+  min-height: 150px;
+}
+
 /*
  * Base structure
  */
