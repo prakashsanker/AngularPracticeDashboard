@@ -3,6 +3,7 @@
 
 	app.controller("JobsController", function() {
 		this.currentJob = 0;
+		this.jobs = jobs;
 		this.setCurrentJob = function(index) {
 			this.currentJob = index; 
 		};		
