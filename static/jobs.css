@@ -10,6 +10,10 @@
 	background-color: #008000;
 }
 
+.force-fixed {
+	position: fixed !important;
+}
+
 
 /*
  * Base structure
