@@ -6,20 +6,20 @@
 <script type="text/javascript" src="/dashboard.js"></script>
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 <body ng-app="dashboard">
-	<div class="dashboard">
-		<div  ng-controller="JobsController as jobsCtrl">
-			<div class="jobs" ng-repeat="job in jobsCtrl.jobs">
-				<div class="job" ng-click="jobsCtrl.setCurrentJob(job.id)" ng-class="{new: job.jobStatus == 'new', inprogress: job.jobStatus == 'progress', resolved: job.jobStatus == 'resolved'}">
-					<div class="job-requester">
+	<div class="dashboard container-fluid">
+		<div  class="row" ng-controller="JobsController as jobsCtrl">
+			<div class="jobs col-sm-3 col-md-2 sidebar">
+				<ul class="job nav nav-sidebar" ng-repeat="job in jobsCtrl.jobs">
+					<li class="job-requester" ng-click="jobsCtrl.setCurrentJob(job.id)" ng-class="{new: job.jobStatus == 'new', inprogress: job.jobStatus == 'progress', resolved: job.jobStatus == 'resolved'}">
 						[{job.requester}]
-					</div>
-					<div class="job-description">
+					</li>
+<!-- 					<div class="job-description">
 						[{job.description}]
 					</div>
 					<div class="job-phone">
 						[{job.phoneNumber}]
-					</div>
-				</div>
+					</div> -->
+				</ul>
 			</div>
 		</div>
 		</div>
