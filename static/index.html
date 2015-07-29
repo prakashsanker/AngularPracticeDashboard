@@ -22,52 +22,60 @@
 					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs" ng-class="{new: job.jobStatus === 'new', inprogress: job.jobStatus === 'progress', resolved: job.jobStatus === 'resolved'}" ng-click="jobsCtrl.setCurrentJob(job.id)">
 						<a href="#">[{job.requester}]</a>
 					</li>
-<!-- 					<div class="job-description">
-						[{job.description}]
-					</div>
-					<div class="job-phone">
-						[{job.phoneNumber}]
-					</div> -->
 				</ul>
 			</div>
 			<div class="main-content" ng-show="jobsCtrl.currentJob">
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					<h3> [{jobsCtrl.getCurrentJob().requester}]</h3>
-					<div class="requester-phone-number">
-							<span class="glyphicon glyphicon-earphone">	
-							<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().phoneNumber}]</a>
-							</span>
-					</div>
-					<div class="contact" ng-show="jobsCtrl.getCurrentJob().contacts">
-						<div class= 'company-info'>
-							<div class='company-name'>
-								[{jobsCtrl.getCurrentJob().contacts.company}]
-							</div>
-							<div class='company-phone'>
+					<div>
+						<h3> [{jobsCtrl.getCurrentJob().requester}]</h3>
+						<div class="requester-phone-number">
 								<span class="glyphicon glyphicon-earphone">	
-								<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
+								<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]"> [{jobsCtrl.getCurrentJob().phoneNumber}]</a>
 								</span>
-							</div>
 						</div>
-						<div class="representative-info">
-							<div class="representative-name">
-								[{jobsCtrl.getCurrentJob().contacts.representativeName}]
-							</div>
-							<div class='representative-email'>
-								<span class="glyphicon glyphicon-send">
-								<a href="mailto:[{jobsCtrl.getCurrentJob().contacts.repEmail}]">[{jobsCtrl.getCurrentJob().contacts.repEmail}]</a>
-								</span>
-							</div>
-							<div class="representative-phone">
+					</div>
+					<hr/>
+					<div class="contact-info">
+						<table>
+							<tr>
+								<td>
+									[{jobsCtrl.getCurrentJob().contacts.company}]
+								</td>
+								<td>
+									<span class="glyphicon glyphicon-earphone">	
+									<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									[{jobsCtrl.getCurrentJob().contacts.representativeName}]
+								</td>
+								<td>
+									<span class="glyphicon glyphicon-send">
+									<a href="mailto:[{jobsCtrl.getCurrentJob().contacts.repEmail}]">[{jobsCtrl.getCurrentJob().contacts.repEmail}]</a>
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Company Phone Number
+								</td>
+								<td>
 									<span class="glyphicon glyphicon-earphone">	
 									<a href="tel:[{jobsCtrl.getCurrentJob().contacts.repPhoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
 									</span>
-							</div>
-							<div class="representative-hints">
-								[{jobsCtrl.getCurrentJob().contacts.helpfulInfo}]
-							</div>
-						</div>
-
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Helpful Info
+								</td>
+								<td>
+									[{jobsCtrl.getCurrentJob().contacts.helpfulInfo}]
+								</td>
+							</tr>
+						</table>
 					</div>
 					<hr/>
 					<div class="description">
@@ -83,7 +91,6 @@
 						</div>
 						<input type="submit" value="Submit"></input>
 					</form>
-
 				</div>
 			</div>
 		</div>

@@ -14,7 +14,21 @@
 	position: fixed !important;
 }
 
+.contact {
+  margin-top: 50px;
+}
 
+.contact-info {
+  margin-top: 20px;
+  background-color: #eee;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.contact-info td {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
 
 /*
  * Base structure
