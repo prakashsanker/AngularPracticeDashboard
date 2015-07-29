@@ -7,12 +7,13 @@
 }
 
 .resolved {
-	background-color: #FF0000;
+	background-color: #5cb85c;
 }
 
 .force-fixed {
 	position: fixed !important;
 }
+
 
 
 /*

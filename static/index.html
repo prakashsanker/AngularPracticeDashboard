@@ -33,13 +33,29 @@
 			<div class="main-content" ng-show="jobsCtrl.currentJob">
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 					<h3> [{jobsCtrl.getCurrentJob().requester}]</h3>
-					<div class="phone-number">
-							<span class="glyphicon glyphicon-earphone">	[{jobsCtrl.getCurrentJob().phoneNumber}]</span>
+					<div class="requester-phone-number">
+							<span class="glyphicon glyphicon-earphone">	
+							<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().phoneNumber}]</a>
+							</span>
 					</div>
+					<div class="contact-info">
+						
+					</div>
+					<hr/>
 					<div class="description">
 						<h4>Description</h4>
 						[{jobsCtrl.getCurrentJob().description}]	
 					</div>
+					<form name="notesForm">
+						<div class="notes-display">
+							[{job.notes}]
+						</div>
+						<div class="notes-container">
+							<textarea ng-model="job.notes"></textarea>
+						</div>
+						<input type="submit" value="Submit"></input>
+					</form>
+
 				</div>
 			</div>
 		</div>
