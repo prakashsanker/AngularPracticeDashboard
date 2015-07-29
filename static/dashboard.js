@@ -44,7 +44,7 @@
 		},
 		{
 			'id': 5,
-			'requeter': 'A. Bambaata',
+			'requester': 'A. Bambaata',
 			'description': 'Boombox, prime condition, from the 80s. Go back in time if you have to',
 			'phoneNumber': '6508045509',
 			'jobStatus': 'resolved'

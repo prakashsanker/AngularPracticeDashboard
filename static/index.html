@@ -1,12 +1,15 @@
+<link rel="stylesheet" type="text/css" href="jobs.css"></link>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<link rel="stylesheet" type="text/css" href="jobs.css"></link>
 <script type="text/javascript" src="/dashboard.js"></script>
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
 <body ng-app="dashboard">
 	<div class="dashboard">
-		<div ng-controller="JobsController as jobsCtrl">
+		<div  ng-controller="JobsController as jobsCtrl">
 			<div class="jobs" ng-repeat="job in jobsCtrl.jobs">
-				<div class="job" ng-class="{new: job.jobStatus == 'new', progress: job.jobStatus == 'progress', resolved: job.jobStatus == 'resolved'}">
+				<div class="job" ng-click="jobsCtrl.setCurrentJob(job.id)" ng-class="{new: job.jobStatus == 'new', inprogress: job.jobStatus == 'progress', resolved: job.jobStatus == 'resolved'}">
 					<div class="job-requester">
 						[{job.requester}]
 					</div>
@@ -18,6 +21,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 </body>
