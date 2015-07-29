@@ -4,8 +4,10 @@
 <body ng-app="dashboard">
 	<div class="dashboard">
 		<div ng-controller="JobsController as jobsCtrl">
-			<div class="jobs">
-				[{jobsCtrl.jobs[0]}]
+			<div class="jobs" ng-repeat="job in jobsCtrl.jobs">
+				[{job.id}]
+				[{job.requester}]
+				[{job.description}]
 			</div>
 		</div>
 	</div>
