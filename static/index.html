@@ -18,93 +18,18 @@
 	</nav>
 	<div class="dashboard container-fluid" ng-controller="JobsController as jobsCtrl">
 		<div class="row" ng-controller="JobsController as jobsCtrl">
-			<div class="jobs col-sm-3 col-md-2 sidebar force-fixed">
-				<input class="filter-input form-control" ng-model="query" type="text"></input>
-				<ul class="job nav">
-					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs | filter: query | orderBy: sortJobsByStatus" ng-class="{new: job.jobStatus === 'new', inprogress: job.jobStatus === 'progress', resolved: job.jobStatus === 'resolved'}" ng-click="jobsCtrl.setCurrentJob(job.id)">
-						<a href="#">[{job.requester}]</a>
-					</li>
-				</ul>
-			</div>
+			<jobs-list></jobs-list>
 			<div class="main-content" ng-show="jobsCtrl.currentJob">
 				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-					<div>
-						<h3> [{jobsCtrl.getCurrentJob().requester}]</h3>
-						<div class="requester-phone-number">
-								<span class="glyphicon glyphicon-earphone">	
-								<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]"> [{jobsCtrl.getCurrentJob().phoneNumber}]</a>
-								</span>
-						</div>
-					</div>
+					<requester-info></requester-info>
 					<hr/>
-					<div class="contact-info">
-						<table>
-							<tr>
-								<td>
-									[{jobsCtrl.getCurrentJob().contacts.company}]
-								</td>
-								<td>
-									<span class="glyphicon glyphicon-earphone">	
-									<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
-									</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									[{jobsCtrl.getCurrentJob().contacts.representativeName}]
-								</td>
-								<td>
-									<span class="glyphicon glyphicon-send">
-									<a href="mailto:[{jobsCtrl.getCurrentJob().contacts.repEmail}]">[{jobsCtrl.getCurrentJob().contacts.repEmail}]</a>
-									</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Company Phone Number
-								</td>
-								<td>
-									<span class="glyphicon glyphicon-earphone">	
-									<a href="tel:[{jobsCtrl.getCurrentJob().contacts.repPhoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
-									</span>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Helpful Info
-								</td>
-								<td>
-									[{jobsCtrl.getCurrentJob().contacts.helpfulInfo}]
-								</td>
-							</tr>
-						</table>
-					</div>
+						<contact-info></contact-info>
 					<hr/>
 					<div class="description">
 						<h4>Description</h4>
 						[{jobsCtrl.getCurrentJob().description}]	
 					</div>
-
-					<form name="notesForm" ng-controller="NotesController as notesCtrl" ng-submit="notesCtrl.addNote(jobsCtrl.getCurrentJob())">
-						<h4>Notes</h4>
-						<div class="notes-display">
-							<table class="table table-striped table-bordered table-condensed">
-								<tr ng-repeat="note in jobsCtrl.getCurrentJob().notes">
-									<td>
-										[{note.date | date : short}]
-									</td>
-									<td>
-										[{note.content}]
-									</td>
-								</tr>
-							</table>
-						</div>
-						<div class="notes-container">
-							<textarea ng-model="notesCtrl.noteContent"></textarea>
-						</div>
-
-						<input type="submit"value="Submit"></input>
-					</form>
+					<reviews-form></reviews-form>
 				</div>
 			</div>
 		</div>

@@ -1,17 +1,39 @@
 (function() {
 	var app = angular.module('dashboard', []);
-
-	// var filters = angular.module('filters', []).filter('sortJobsByStatus', function() {
-	// 	return function(job) {
-
-	// 	}
-	// });
-
 	app.config(function($interpolateProvider) {
     	$interpolateProvider.startSymbol('[{');
     	$interpolateProvider.endSymbol('}]');
 	});
 	var currentJob = null;
+
+	app.directive('contactInfo', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'contact-info.html'
+		};
+	});
+
+	app.directive('requesterInfo', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'requester-info.html'
+		};
+	});
+
+	app.directive('jobsList', function() {
+		return {
+			restrict: 'E',
+			templateUrl: 'jobs.html'
+		};
+	});
+
+	app.directive('reviewsForm', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'notes.html'
+		};
+	});
+
 	app.controller("JobsController", ['$scope', function($scope) {
 		this.currentJob = null;
 		this.jobs = jobs;
@@ -37,11 +59,6 @@
 			}
 		};
 	}]);
-
-	app.controller("ContentController", function() {
-
-
-	});
 
 	app.controller("NotesController", function() {
 		this.noteContent = '';

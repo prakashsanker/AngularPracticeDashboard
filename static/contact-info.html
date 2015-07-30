@@ -1,0 +1,42 @@
+<div class="contact-info">
+	<table>
+		<tr>
+			<td>
+				[{jobsCtrl.getCurrentJob().contacts.company}]
+			</td>
+			<td>
+				<span class="glyphicon glyphicon-earphone">	
+				<a href="tel:[{jobsCtrl.getCurrentJob().phoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				[{jobsCtrl.getCurrentJob().contacts.representativeName}]
+			</td>
+			<td>
+				<span class="glyphicon glyphicon-send">
+				<a href="mailto:[{jobsCtrl.getCurrentJob().contacts.repEmail}]">[{jobsCtrl.getCurrentJob().contacts.repEmail}]</a>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Company Phone Number
+			</td>
+			<td>
+				<span class="glyphicon glyphicon-earphone">	
+				<a href="tel:[{jobsCtrl.getCurrentJob().contacts.repPhoneNumber}]">[{jobsCtrl.getCurrentJob().contacts.companyPhone}]</a>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Helpful Info
+			</td>
+			<td>
+				[{jobsCtrl.getCurrentJob().contacts.helpfulInfo}]
+			</td>
+		</tr>
+	</table>
+</div>
