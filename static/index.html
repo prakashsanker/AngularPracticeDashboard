@@ -18,8 +18,9 @@
 	<div class="dashboard container-fluid" ng-controller="JobsController as jobsCtrl">
 		<div class="row" ng-controller="JobsController as jobsCtrl">
 			<div class="jobs col-sm-3 col-md-2 sidebar force-fixed">
+				<input class="filter-input form-control" type="text"></input>
 				<ul class="job nav">
-					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs" ng-class="{new: job.jobStatus === 'new', inprogress: job.jobStatus === 'progress', resolved: job.jobStatus === 'resolved'}" ng-click="jobsCtrl.setCurrentJob(job.id)">
+					<li class="job-requester" ng-repeat="job in jobsCtrl.jobs | orderBy: sortJobsByStatus" ng-class="{new: job.jobStatus === 'new', inprogress: job.jobStatus === 'progress', resolved: job.jobStatus === 'resolved'}" ng-click="jobsCtrl.setCurrentJob(job.id)">
 						<a href="#">[{job.requester}]</a>
 					</li>
 				</ul>

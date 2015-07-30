@@ -1,11 +1,17 @@
 (function() {
 	var app = angular.module('dashboard', []);
 
+	// var filters = angular.module('filters', []).filter('sortJobsByStatus', function() {
+	// 	return function(job) {
+
+	// 	}
+	// });
+
 	app.config(function($interpolateProvider) {
     	$interpolateProvider.startSymbol('[{');
     	$interpolateProvider.endSymbol('}]');
 	});
-	app.controller("JobsController", function() {
+	app.controller("JobsController", ['$scope', function($scope) {
 		this.currentJob = null;
 		this.jobs = jobs;
 		this.setCurrentJob = function(index) {
@@ -17,8 +23,18 @@
 					return jobs[i];
 				}
 			}
-		}	
-	});
+		};
+
+		$scope.sortJobsByStatus = function(job) {
+			if (job.jobStatus === "new") {
+				return 0;
+			} else if (job.jobStatus === "progress") {
+				return 1;
+			} else {
+				return 2;
+			}
+		};
+	}]);
 
 	app.controller("ContentController", function() {
 
@@ -37,14 +53,14 @@
 			'requester': 'Prakash Sanker',
 			'description': 'I want you to give me the entire world. Jk. The new Lebron10s will do',
 			'phoneNumber': '18008080',
-			'jobStatus': 'new',
+			'jobStatus': 'resolved',
 			'notes': "We haven't started looking at this case yet",
 			'contacts': {'company': 'Nike', 'companyPhone': '(415) 544-9918', 'representativeName': 'Mr. Jacob Mueller', 'repPhoneNumber': '(415) 5509-432', 'repEmail': 'jmueller@nike.com', 'helpfulInfo': 'Contact between 7pm and 10pm on Thursdays - he will pick up more often'}
 		},
 		{
 			'id': 2,
 			'requester': 'MJ Watson',
-			'description': 'Please give me Spiderman, preferably upside down...but Im not fussy',
+			'description': 'Please tell me who Spiderman is!',
 			'phoneNumber': '650848405',
 			'jobStatus': 'new',
 			'notes': "We haven't started this case yet - not as important as the others",

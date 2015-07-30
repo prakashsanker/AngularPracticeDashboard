@@ -35,6 +35,10 @@
   min-height: 150px;
 }
 
+.filter-input {
+  padding-bottom: 10px;
+}
+
 /*
  * Base structure
  */
