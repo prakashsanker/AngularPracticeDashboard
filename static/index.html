@@ -87,17 +87,16 @@
 					<form name="notesForm">
 						<h4>Notes</h4>
 						<div class="notes-display">
-							<table>
-								<tr ng-repeat="job in jobsCtrl.jobs | orderBy: sortJobsByStatus">
+							<table class="table table-striped table-bordered table-condensed">
+								<tr ng-repeat="note in jobsCtrl.getCurrentJob().notes">
 									<td>
-
+										[{note.date}]
 									</td>
 									<td>
-
+										[{note.content}]
 									</td>
 								</tr>
 							</table>
-							[{jobsCtrl.getCurrentJob().notes}]
 						</div>
 						<div class="notes-container">
 							<textarea ng-model="job.notes"></textarea>
