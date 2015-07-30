@@ -53,7 +53,7 @@
 			'requester': 'Prakash Sanker',
 			'description': 'I want you to give me the entire world. Jk. The new Lebron10s will do',
 			'phoneNumber': '18008080',
-			'jobStatus': 'resolved',
+			'jobStatus': 'new',
 			'notes': "We haven't started looking at this case yet",
 			'contacts': {'company': 'Nike', 'companyPhone': '(415) 544-9918', 'representativeName': 'Mr. Jacob Mueller', 'repPhoneNumber': '(415) 5509-432', 'repEmail': 'jmueller@nike.com', 'helpfulInfo': 'Contact between 7pm and 10pm on Thursdays - he will pick up more often'}
 		},
