@@ -50,7 +50,6 @@
 			var note = {"date": currentDate, "content": this.noteContent};
 			job.notes.push(note);
 			this.noteContent = '';
-			debugger
 		};
 	});
 
@@ -71,7 +70,7 @@
 			'description': 'Please tell me who Spiderman is!',
 			'phoneNumber': '650848405',
 			'jobStatus': 'new',
-			'notes': "We haven't started this case yet - not as important as the others",
+			'notes': [{"date": "06/15/15",  "content": "We haven't started this case yet - not as important as the others"}],
 			'contacts': {'company': 'Marvel', 'companyPhone': '(852) 123-4568', 'representativeName': 'Peter Parker', 'repPhoneNumber': '(514) 445-8199', 'repEmail': 'pparker@marvel.com', 'helpfulInfo': "It's better to contact him on this number - (650)804-5509" }
 		},
 		{	'id': 3,
@@ -79,7 +78,7 @@
 			'description': 'Matthew Santos as president...or Jed Bartlet..but please not anyone Republican',
 			'phoneNumber': '1234456',
 			'jobStatus': 'progress',
-			'notes': '',
+			'notes': [],
 			'contacts' : []
 		}, 
 		{
@@ -88,7 +87,8 @@
 			'description': 'A frictionless suit that wont burst into flames when I run at a zillion miles an hour...its for a friend',
 			'phoneNumber': '6508045509',
 			'jobStatus': 'progress',
-			'notes': ''
+			'notes': [],
+			'contacts': []
 		},
 		{
 			'id': 5,
