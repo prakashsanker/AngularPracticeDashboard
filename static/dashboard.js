@@ -54,7 +54,7 @@
 			'description': 'I want you to give me the entire world. Jk. The new Lebron10s will do',
 			'phoneNumber': '18008080',
 			'jobStatus': 'new',
-			'notes': "We haven't started looking at this case yet",
+			'notes': [{"date": "06/15/15" , "content": "We haven't started looking at this case yet"}],
 			'contacts': {'company': 'Nike', 'companyPhone': '(415) 544-9918', 'representativeName': 'Mr. Jacob Mueller', 'repPhoneNumber': '(415) 5509-432', 'repEmail': 'jmueller@nike.com', 'helpfulInfo': 'Contact between 7pm and 10pm on Thursdays - he will pick up more often'}
 		},
 		{
@@ -88,7 +88,8 @@
 			'description': 'Boombox, prime condition, from the 80s. Go back in time if you have to',
 			'phoneNumber': '6508045509',
 			'jobStatus': 'resolved',
-			'notes': ''
+			'contacts': {'company': 'Zulu Nation', 'companyPhone': '(714) 898-113', 'representativeName': 'G. Flash', 'repPhoneNumber': '(526) 7719-521', 'repEmail': 'gflash@zulunation.com', 'helpfulInfo': 'Call in the morning'},
+			'notes': [{"date": "04/02/15", "content": "Started the case, made contact with representative"}, {"date": "04/03/15", "content": "Contact responded - will take two weeks for boombox to come back"}, {"date": "05/03/15", "content": "Update from contact - delivery time down to 4 days"}, {"date": "09/03/15", "content": "Delivered to client"}]
 		}
 	];
 

@@ -87,12 +87,22 @@
 					<form name="notesForm">
 						<h4>Notes</h4>
 						<div class="notes-display">
+							<table>
+								<tr ng-repeat="job in jobsCtrl.jobs | orderBy: sortJobsByStatus">
+									<td>
+
+									</td>
+									<td>
+
+									</td>
+								</tr>
+							</table>
 							[{jobsCtrl.getCurrentJob().notes}]
 						</div>
 						<div class="notes-container">
 							<textarea ng-model="job.notes"></textarea>
 						</div>
-						<input type="submit" value="Submit"></input>
+						<input type="submit" ng-model="job.notes" value="Submit"></input>
 					</form>
 				</div>
 			</div>
