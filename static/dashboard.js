@@ -11,11 +11,13 @@
     	$interpolateProvider.startSymbol('[{');
     	$interpolateProvider.endSymbol('}]');
 	});
+	var currentJob = null;
 	app.controller("JobsController", ['$scope', function($scope) {
 		this.currentJob = null;
 		this.jobs = jobs;
 		this.setCurrentJob = function(index) {
-			this.currentJob = index; 
+			this.currentJob = index;
+			currentJob = index;
 		};
 		this.getCurrentJob = function() {
 			for(var i = 0; i < jobs.length; i++) {
@@ -42,12 +44,14 @@
 	});
 
 	app.controller("NotesController", function() {
-		this.notes = null;
-		this.addNote = function(note) {
-			this.
+		this.noteContent = '';
+		this.addNote = function(job) {
+			var currentDate = new Date().getTime();
+			var note = {"date": currentDate, "content": this.noteContent};
+			job.notes.push(note);
+			this.noteContent = '';
+			debugger
 		};
-
-
 	});
 
 
