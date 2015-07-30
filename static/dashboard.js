@@ -42,6 +42,10 @@
 	});
 
 	app.controller("NotesController", function() {
+		this.notes = null;
+		this.addNote = function(note) {
+			this.
+		};
 
 
 	});
