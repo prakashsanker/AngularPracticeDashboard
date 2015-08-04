@@ -5,6 +5,8 @@ import (
 	"github.com/gorilla/mux"
 	"database/sql"
     _ "github.com/go-sql-driver/mysql"
+    "fmt"
+    "log"
 )
 
 type Route struct {
@@ -15,6 +17,9 @@ type Route struct {
 }
 
 type Routes[]Route
+
+var db *sql.DB
+var err error
 
 
 func NewRouter() *mux.Router {

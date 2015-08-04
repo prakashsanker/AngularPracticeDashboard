@@ -34,7 +34,14 @@
 		};
 	});
 
-	app.controller("JobsController", ['$scope', function($scope) {
+	app.controller("JobsController", ['$scope', '$http', function($scope, $http) {
+		$http.get("http://localhost:8200/requesters")
+			.success(function(data, status, headers, config){
+				
+			})
+			.error(function(err, status, headers, config) {
+        		console.log("Well, this is embarassing.");
+    		});
 		this.currentJob = null;
 		this.jobs = jobs;
 		this.setCurrentJob = function(index) {

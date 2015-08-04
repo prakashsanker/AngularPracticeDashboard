@@ -3,7 +3,7 @@ package main
 import(
 	"net/http"
 	"html/template"
-    "github.com/gorilla/mux"
+    // "github.com/gorilla/mux"
     "encoding/json"
 )
 
@@ -14,11 +14,11 @@ func Index(w http.ResponseWriter, r *http.Request) {
 }
 
 func getRequesters(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
 	w.Header().Set("Access-Control-Allow-Origin", "*")
 	w.WriteHeader(http.StatusOK)
 	rows, err := db.Query("SELECT * from requesters")
 	check(err)
+	var requester Requester
 	var requesters Requesters
 	for rows.Next() {
 		var id int64
@@ -30,7 +30,7 @@ func getRequesters(w http.ResponseWriter, r *http.Request) {
 		requester = Requester{Id: id, Name: name, Email: email, PhoneNumber: phoneNumber}
 		requesters = append(requesters, requester)
 	}
-	if err := json.NewEncoder(w).Encode(districts); err != nil {
+	if err := json.NewEncoder(w).Encode(requesters); err != nil {
 		check(err)
 	}
 }
